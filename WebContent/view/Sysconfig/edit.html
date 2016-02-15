@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+</head>
+<body>
+	<form method="post" action="{$formUrl}">
+	{foreach from=$data key="k" item="value"}
+		<div>
+			<label>{$value.title}</label><input name="{$value.code}" value="{$value.value}">
+		</div>
+	{/foreach}
+		<input type="submit" value="确认">
+	</form>
+</body>
+</html>

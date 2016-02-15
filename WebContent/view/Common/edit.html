@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<script src="{$basepath}/resource/js/jquery2.1.3.js"></script>
+<link href="{$basepath}/resource/css/common.css" type="text/css" rel="stylesheet"/>
+<script src="{$basepath}/resource/js/common.js"></script>
+</head>
+<body>
+	<div class="oper_menu">
+		<a class="btn btn-primary" href="javascript:window.history.go(-1);">back</a>
+	</div>
+	<form action="{$fromurl}" method="post">
+	{foreach from=$fields key="f" item="fval"}
+		{if $fval.edittype neq "none"}
+		<div>
+			<lable>{$fval.comment}</lable>
+			<input name="{$f}" value="{if $fval.value}{$fval.value}{/if}"/>
+		</div>
+		{/if}
+	{/foreach}
+		
+		<div>
+			<input type="submit" value="submit">
+		</div>
+	</form>
+</body>
+</html>

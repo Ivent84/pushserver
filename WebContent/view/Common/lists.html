@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<script src="{$basepath}/resource/js/jquery2.1.3.js"></script>
+<link href="{$basepath}/resource/css/common.css" type="text/css" rel="stylesheet"/>
+<script src="{$basepath}/resource/js/common.js"></script>
+</head>
+<body>
+	<div class="oper_menu">
+		<button class="btn btn-primary" submiturl="{$addurl}" resource="">add</button>
+		<button class="btn btn-primary" submiturl="{$editurl}" resource=".check_id:checked">edit</button>
+		<button class="btn btn-primary" submiturl="{$delurl}" resource=".check_id:checked">del</button>
+	</div>
+	<table>
+		<tr>
+			<th><input type="checkbox" class="check_ids" /></th>
+		{foreach from=$fields key="f" item="fval"}
+			{if $fval.showtype neq "none"}
+			<th>{$fval.comment}</th>
+			{/if}
+		{/foreach}
+		</tr>
+		<body>
+			{foreach from=$data key="i" item="value"}
+			<tr>
+				<td><input type="checkbox" class="check_id" name="{$primarykey}" value="{$value.$primarykey}" /></td>
+				{foreach from=$fields key="f" item="fval"}
+				{if $fval.showtype neq "none"}
+				<td>{$value.$f}</td>
+				{/if}
+				{/foreach}
+			</tr>
+			{/foreach}
+		</body>
+	</table>
+</body>
+</html>
