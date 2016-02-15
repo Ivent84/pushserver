@@ -1,4 +1,4 @@
-package com.qixin.api;
+package servlet;
 
 import java.io.IOException;
 
@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.qixin.api.Api;
 
 import net.sf.json.JSONObject;
 import util.BodyReaderHttpServletRequestWrapper;
