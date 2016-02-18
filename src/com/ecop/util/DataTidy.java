@@ -60,14 +60,17 @@ public class DataTidy {
 						_date.setDate(_date.getDate() + 1);
 						int date = _date.getDate();
 //						_date.setMonth(_date.getMonth() + 1);
-						sql = "insert into usersubscriberecord(phone,package_code,need_sync,charge_date) values(?,?,?,?)";
-						String[] paramsN = {phone, newPackage, "1", "" + date};
+						sql = "insert into usersubscriberecord(phone,package_code,need_sync,charge_date,plan_sync_date) values(?,?,?,?)";
+						String[] paramsN = {phone, newPackage, "1", "" + date, "" + date};
 						DB.execute(sql, paramsN);
-						//TODO 直接同步到aac
+						//直接同步到aac
 						syncToAac(phone, newPackage, _date);
 					}else if(has.size() == 1){ //修改套餐
 						//修改，定时同步到aac
 						sql = "update usersubscriberecord set need_sync=?,package_code";
+						sql = "insert into usersubscriberecord(phone,package_code,need_sync,charge_date) values(?,?,?,?)";
+						String[] paramsN = {phone, newPackage, "1", "" + has.get(0).get("charge_date")};
+						DB.execute(sql, paramsN);
 					}else{ //二次修改套餐
 						
 					}

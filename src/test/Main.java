@@ -20,7 +20,7 @@ public class Main {
 			int m = Integer.parseInt(dbres.get("value"));
 		}
 		String key = "B977C347";
-		String json = "{\"productinfo.productgroup\":\"0\",\"operatorid\":\"0\",\"productinfo.productname\":\"ZJXCLLB20\",\"productinfo.ordertype\":\"1\",\"productinfo.productid\":\"ZJXCLLB20\",\"userinfo.area\":\"200\",\"option\":\"1\",\"token\":\"1\",\"menuid\":\"1\",\"userinfo.servernum\":\"13902220524\",\"process_code\":\"productorder\",\"productinfo.producttype\":\"0\"}";
+		String json = "{\"process_code\":\"PACKAGEMANAGEMENT\",\"token\":\"0\",\"option\":\"0\",\"userinfo.servernum\":\"13902220524\",\"serviceinfo.id\":\"PACKAGEMANAGEMENT\"}";
 		String[] result = ServiceUtils.generateSignOAuth(key, json);
 		System.out.println(result[1]);
 		
