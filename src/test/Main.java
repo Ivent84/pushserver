@@ -11,7 +11,7 @@ import util.ServiceUtils;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		String params[] = {"messagesendlimitperday"};
 		Map<String, String> dbres = DB.queryRow("select * from config where code=?", params);
 		if (null == dbres){
